@@ -13,11 +13,10 @@ using namespace std;
 
 bool comprovaExpresio (ArrayStack &pila) {
     if(!pila.empty()) {
+        //If the stack is not empty
         ArrayStack pilaAux2;
         ArrayStack pilaAux1;
         pilaAux1 = pila;
-        cout<<"Pila 1"<<endl;
-        pilaAux1.print();
         while(!pilaAux1.empty()) {
             switch (pilaAux1.top()) {
                 case '[' :
@@ -41,16 +40,18 @@ bool comprovaExpresio (ArrayStack &pila) {
             }
             pilaAux1.pop();
         }
-        cout<<"Pila"<<endl;
-        pila.print();
-        cout<<"Pila 2"<<endl;
+        bool trobat = true;
         pilaAux2.print();
-        cout << pila.top() << "|" << pilaAux2.top();
-        while (pila.top() == pilaAux2.top()) {
-            pila.pop();
-            pilaAux2.pop();
+        while (!pila.empty() && !pilaAux2.empty() && trobat) {
+            if(pila.top() == pilaAux2.top()) {
+                pila.pop();
+                pilaAux2.pop();
+            }
+            else {
+                trobat = false;
+            }
         }
-        if (pila.empty()) {
+        if (trobat) {
             return true;
         }
         else {
@@ -61,20 +62,15 @@ bool comprovaExpresio (ArrayStack &pila) {
         return true;
     }
 }
-ArrayStack getStackFromInput(ArrayStack &pila) {
+void getStackFromInput(ArrayStack &pila) {
     char aux;
-    string cadenaAux;
-    int tamanyCadena;
     cout << "Introduce a numeric expresion" << endl;
-    cin >> cadenaAux;
-    tamanyCadena = sizeof(cadenaAux);
-    for(int i = 0; i<tamanyCadena; ++i) {
-        aux = cadenaAux[i];
+    while(cin.get(aux)) {
+        //Control d para parar, por ahora
         if (aux == '{' || aux == '}' || aux == '[' || aux == ']' || aux == '(' ||aux == ')') {
             pila.push(aux);
         }
     }
-    return pila;
 }
 int main(int argc, char** argv) {
     ArrayStack pila;
