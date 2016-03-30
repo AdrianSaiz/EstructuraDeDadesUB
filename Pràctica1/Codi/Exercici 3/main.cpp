@@ -39,7 +39,7 @@ bool topAparellat(char top1, char top2) {
  * @param pila The stack that is going to be analyzed
  * @return true if only if the expression have the correct order
  */
-bool comprovaExpresio (ArrayStack &pila) {
+bool comprovaExpresio (ArrayStack<char> &pila) {
     //If the stack is empty, it returns true because there isn't elements to analyze.
     if(!pila.empty()) {
         
@@ -70,7 +70,7 @@ bool comprovaExpresio (ArrayStack &pila) {
          * the first stack) + O(n) (we check all elements of first stack) + O(1) 
          * (const senteces) = 2*O(n) + O(1) = O(n)
          */
-        ArrayStack pilaAux2;
+        ArrayStack<char> pilaAux2;
         while(!pila.empty()) { //Checks if "pila" is empty
             
             if(pilaAux2.empty()) { //Checks if "pilaAux2" is empty
@@ -103,7 +103,7 @@ bool comprovaExpresio (ArrayStack &pila) {
  * 
  * @param pila ArrayStack which contains the numeric expression
  */
-void getStackFromInput(ArrayStack &pila) {
+void getStackFromInput(ArrayStack<char> &pila) {
     string stringAux;
     char aux;
     cout << "Introduce a numeric expresion" << endl;
@@ -122,7 +122,7 @@ void getStackFromInput(ArrayStack &pila) {
  *          char **argv
  */
 int main(int argc, char** argv) {
-    ArrayStack pila;
+    ArrayStack<char> pila;
     try {
         getStackFromInput(pila);
         if (comprovaExpresio(pila)) {

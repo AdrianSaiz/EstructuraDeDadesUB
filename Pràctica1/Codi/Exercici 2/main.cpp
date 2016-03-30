@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.cpp
- * Author: rballeba50.alumnes
+ * Author: Rubén Ballester Bautista | Oriol Rabasseda Alcaide
  *
- * Created on 17 / març / 2016, 12:37
+ * Created on 10 / març / 2016, 12:13
  */
 
 #include <cstdlib>
@@ -17,9 +11,13 @@
 
 using namespace std;
 
+/**
+ * Maximum number of elements that can contain the queue
+ */
 const int MAX_QUEUE = 3;
+
 /*
- * 
+ * Sequence of instructions that the queue object can run.
  */
 int main(int argc, char** argv) {
     ArrayQueue mevaCua (MAX_QUEUE);
