@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   ArrayQueue.h
- * Author: rballeba50.alumnes
+ * Author: Rubén Ballester Bautista | Oriol Rabasseda Alcaide
  *
- * Created on 17 / març / 2016, 12:37
+ * Created on 10 / març / 2016, 12:13
  */
 
 #ifndef ARRAYQUEUE_H
@@ -16,22 +10,22 @@
 
 class ArrayQueue {
 public:
-    ArrayQueue(int const &maxSize);
-    virtual ~ArrayQueue();
+    ArrayQueue(int const &maxSize); // constructor
+    virtual ~ArrayQueue(); // destructor
     //Check methods
-    int size();
-    bool full();
-    bool empty();
+    int size(); // return the size
+    bool full(); // return TRUE if the queue is full
+    bool empty(); // return TRUE if the queue is empty
     //Set methods
-    void enqueue(int const &item);
-    int dequeue();
-    void print();
+    void enqueue(int const &item); // introduce an element in the queue
+    int dequeue(); // return the first element of queue
+    void print(); //Prints all the content of the queue
 private:
     int sizeController;
     int max_size;
     int sentinella;
     int* queueArray;
-    int first();
+    int first(); //Returns the first element of the queue
 };
 
 #endif /* ARRAYQUEUE_H */
