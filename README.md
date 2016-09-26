@@ -4,7 +4,7 @@ Aquest repositori és una recopilació del treball realitzat per els alumnes **O
 
 En aquest repositori pots trobar una selecció de TADs importants utilitzats al disseny d'estructures de dades com Stacks, Queues, Priority Queues, Hash, Stack, Heaps... implementats al llenguatge C++ (pensat per compilar amb els stàndars superiors o iguals a C++11).
 
-Amb cada TAD trobaràs una implementació d'un algorisme que empra aquests elements per solucionar problemes comuns, (i no tan comuns) en el disseny de software / resolució de problemes actualment.
+Amb cada TAD trobaras una implementació d'un algorisme que empra aquests elements per solucionar problemes comuns, (i no tan comuns) en el disseny de software / resolució de problemes actualment.
 
 Per qualsevol dubte, pots contactar amb nosaltres per GitHub.
 
