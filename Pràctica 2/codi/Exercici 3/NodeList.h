@@ -10,6 +10,7 @@
 #include "DoubleNode.h"
 #include <iostream>
 #include <stdexcept>
+#include <fstream>
 
 template <class E> class NodeList {
     public:
@@ -56,7 +57,6 @@ template <class E> NodeList<E>::NodeList() {
 template <class E> NodeList<E>::~NodeList() {
     delete head;
     delete tail;
-    delete puntInteres;
     //Com els nodes els hem creat sense punters C++ gestiona la seva eliminació
 }
 /*||||||||||||||||||||||||
@@ -75,11 +75,10 @@ template <class E> E NodeList<E>::get() const {
     else return puntInteres->getElement();
 }
 template <class E> void NodeList<E>::show() const {
-    if (empty()) throw new std::out_of_range("La llista està buida.");
-    else {
+    if (!empty()) {
         DoubleNode<E>* puntInteresAux = head->getNext(); // per retornar al punt interés una vegada s'hagi mostrat tot.
         while(puntInteresAux != tail) {
-            std::cout << puntInteresAux->getElement() <<  "| ";
+            std::cout << puntInteresAux->getElement() <<  " | ";
             puntInteresAux = puntInteresAux->getNext();
         }
         std::cout << std::endl;
@@ -103,7 +102,7 @@ template <class E> void NodeList<E>::insert(E elem) {
 
 template <class E> void NodeList<E>::remove() {
     if (empty()) throw new std::out_of_range("No hi ha elements");
-    else if(end()) throw new std::out_of_range("No pots eliminar l'últim element");
+    //else if(end()) throw new std::out_of_range("No pots eliminar l'últim element");
     else {
         puntInteres->getNext()->setPrev(puntInteres->getPrev());
         puntInteres = puntInteres->getNext();
